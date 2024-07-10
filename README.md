@@ -2,7 +2,8 @@
 ```
 UGREEN is a private API document for NAS Servers and is NOT AN OFFICIAL DOCUMENT!
 ```
-I haven't figured out how to generate the hash cipher yet, so for now we are borrowing the token from the system. According to UGREEN Support, it is encrypted with SHA512 and AES, please contact us if you find the solution
+I haven't figured out how to generate the hash cipher yet, so for now we are borrowing the token from the system. According to UGREEN Support, it is encrypted with SHA512 and AES, please contact us if you find the solution. If I can encode the password, I will turn it into a library
+
 ## Steps to get Static Token
 ### Step 1 Login desktop
 ![step1](https://i.imgur.com/3uM8Fdn.png)
