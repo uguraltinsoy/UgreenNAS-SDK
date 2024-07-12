@@ -1,0 +1,219 @@
+# UGREEN NAS Simple Python SDK
+```
+UGREEN is a PRIVATE API based Simple SDK being developed for NAS servers. NOT AN OFFICIAL DOCUMENT! 
+```
+## RSI Public key Creation
+To use the SDK, connect to your NAS server via SSH and open the example 999.pub file of your user uid in the ```/var/cache/ugreen-rsa``` folder as ```cat 999.pub```, copy the content and save it into your project as ```public_key.pem``` as below
+![ssh](https://i.imgur.com/CnMm2jN.png)
+![app](https://i.imgur.com/HLOdOvs.png)
+
+## Now that the RSA Public key is set, you are ready to use the SDK
+
+## PIP Install
+```
+pip install UgreenNAS==0.0.1
+```
+## init
+
+- Copy the downloaded pem file into the project file
+```python
+nas = UgreenNAS("<nas_ip>", <port>, "<username>", "<password>", "public_key.pem")
+```
+## Connection check
+```python
+connection, code, msg = nas.isConnect()
+```
+
+Success: ```(True, 200, 'success')```
+
+Error:  ```(False, 1003, 'Wrong account or password. Please enter again')```
+
+## Get User Token
+```python
+token = nas.getToken()
+```
+
+Success: ```d698b3a91b58d2008d2737883683c3d7```
+
+Error: ```None```
+
+## Chek Handshake
+```python
+chekHandshake = nas.chekHandshake("<token>")
+```
+
+Success: ```(200, 'success')```
+
+Error: ```(1024, 'Authorization timeout, please login again!')```
+
+## Get User Image
+- returns the image as a variable
+```python
+image = getUserImage()
+```
+## Save User Image
+- If "" is empty, it saves directly into the project file, for example, you can create an img folder and save it as "img/"
+
+```python
+nas.saveUserImage("<folder>","uguraltnsy.jpg")
+```
+
+## Priority Link
+```python
+priority_link = nas.priorityLink()
+```
+
+Success: 
+```Json
+{
+  "ddns": [],
+  "host": "111.111.111.111",
+  "uglink": "",
+  "uglink_id": "",
+  "ipv_4": [
+    "111.111.111.111"
+  ],
+  "ipv_6": [],
+  "http_port": 9999,
+  "https_port": 9443
+}
+```
+
+Error:  ```Authorization timeout, please login again!```
+
+## Sysinfo
+```python
+sysInfo = nas.sysInfo()
+```
+
+Success: 
+```Json
+{
+  "common": {
+    "nas_name": "DXP4800PLUS",
+    "uglink_id": "",
+    "nas_owner": "{owner_email}",
+    "model": "DXP4800 Plus",
+    "serial": "{serial_number}",
+    "mac": [
+      "{mac_1}",
+      "{mac_2}"
+    ],
+    "system_version": "1.0.0.0940",
+    "run_time": 200635,
+    "last_turn_on_time": "2024-07-08 14:45:43",
+    "repair_start_time": 0,
+    "repair_end_time": 0
+  },
+  "hardware": {
+    "cpu": [
+      {
+        "model": "Intel(R) Pentium(R) Gold 8505",
+        "ghz": 4400,
+        "core": 5,
+        "thread": 6,
+        "temperature": 42
+      }
+    ],
+    "mem": [
+      {
+        "model": "M425R1GB4BB0-CQKOL",
+        "size": 8589934592,
+        "mhz": "4800 MHz"
+      }
+    ],
+    "net": [
+      {
+        "model": "eth1",
+        "ip": "-",
+        "mac": "{mac_1}"
+      },
+      {
+        "model": "eth0",
+        "ip": "-",
+        "mac": "{mac_2}"
+      }
+    ],
+    "ups": null,
+    "usb": null
+  }
+}
+```
+
+Error:  ```Authorization timeout, please login again!```
+
+## System Status
+```python
+systemStatus = nas.systemStatus()
+```
+Success: 
+```Json
+{
+  "dev_name": "DXP4800PLUS",
+  "last_boot_date": "07-08 14:45",
+  "last_boot_time": 1720439143,
+  "message": "The system is running normally.",
+  "status": 0,
+  "total_run_time": 200835,
+  "type": 2
+}
+```
+
+Error:  ```Authorization timeout, please login again!```
+
+## Device Monitoring
+```python
+deviceMonitoring = nas.deviceMonitoring()
+```
+Success: 
+```Json
+{
+  "cpu_usage_rate": 0.67,
+  "download_speed": {
+    "unit": "KB/s",
+    "value": 2.4
+  },
+  "ram_usage_rate": "13.09",
+  "type": 3,
+  "upload_speed": {
+    "unit": "KB/s",
+    "value": 0.06
+  }
+}
+```
+
+Error:  ```Authorization timeout, please login again!```
+
+## Temperature Monitoring
+```python
+temperatureMonitoring = nas.temperatureMonitoring()
+```
+Success: 
+```Json
+{
+  "cpu_status": 0,
+  "cpu_temperature": 43,
+  "disk_list": [],
+  "fan_speed": 590,
+  "fan_status": 0,
+  "message": "The temperature is normal, and the heat dissipation is good.",
+  "status": 0,
+  "type": 6
+}
+```
+
+Error:  ```Authorization timeout, please login again!```
+
+## Storage Space
+```python
+storageSpace = nas.storageSpace()
+```
+Success: 
+```Json
+{
+  "storage_list": null,
+  "type": 4
+}
+```
+
+Error:  ```Authorization timeout, please login again!```

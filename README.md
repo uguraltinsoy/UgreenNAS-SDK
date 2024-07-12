@@ -1,14 +1,16 @@
-# UGREEN NAS Private API
+# UGREEN NAS Simple SDK
 ```
-UGREEN is a private API document for NAS Servers and is NOT AN OFFICIAL DOCUMENT!
+UGREEN is a PRIVATE API based Simple SDK being developed for NAS servers. NOT AN OFFICIAL DOCUMENT! 
 ```
-I haven't figured out how to generate the hash cipher yet, so for now we are borrowing the token from the system. According to UGREEN Support, it is encrypted with SHA512 and AES, please contact us if you find the solution. If I can encode the password, I will turn it into a library
+## RSI Public key Creation
+To use the SDK, connect to your NAS server via SSH and open the example 999.pub file of your user uid in the ```/var/cache/ugreen-rsa``` folder as ```cat 999.pub```, copy the content and save it into your project as ```public_key.pem``` as below
+![ssh](https://i.imgur.com/CnMm2jN.png)
+![app](https://i.imgur.com/HLOdOvs.png)
 
-## Steps to get Static Token
-### Step 1 Login desktop
-![step1](https://i.imgur.com/3uM8Fdn.png)
-### Step 2 Copy Static Token
-![step2](https://i.imgur.com/ORgItE6.png)
+## SDK
+### [JAVA SDK](/Java)
+### [PYTHON SDK](/Python)
+
 
 ## Verify
 #### GET HTTP  ```{ip-address}:{port}/ugreen/v1/verify/heartbeat```

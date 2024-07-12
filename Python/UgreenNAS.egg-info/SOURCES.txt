@@ -1,0 +1,9 @@
+README.md
+setup.py
+UgreenNAS/__init__.py
+UgreenNAS/ugreennas.py
+UgreenNAS.egg-info/PKG-INFO
+UgreenNAS.egg-info/SOURCES.txt
+UgreenNAS.egg-info/dependency_links.txt
+UgreenNAS.egg-info/requires.txt
+UgreenNAS.egg-info/top_level.txt
