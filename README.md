@@ -9,7 +9,7 @@ To use the SDK, connect to your NAS server via SSH and open the example 999.pub 
 
 ## SDK
 ### [JAVA SDK](./Java)
-### [PYTHON SDK](./Python)
+### [PYTHON SDK](https://github.com/uguraltinsoy/UgreenNAS-SDK/tree/main/Python)
 
 
 ## Verify
