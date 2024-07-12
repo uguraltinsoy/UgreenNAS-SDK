@@ -8,8 +8,8 @@ To use the SDK, connect to your NAS server via SSH and open the example 999.pub 
 ![app](https://i.imgur.com/HLOdOvs.png)
 
 ## SDK
-### [JAVA SDK](/Java)
-### [PYTHON SDK](/Python)
+### [JAVA SDK](./Java)
+### [PYTHON SDK](./Python)
 
 
 ## Verify
