@@ -1,4 +1,6 @@
 # UGREEN NAS Simple SDK
+[![Sponsor](https://img.shields.io/badge/Sponsor-uguraltinsoy-ea4aaa?style=for-the-badge&logo=github-sponsors)](https://github.com/sponsors/uguraltinsoy)
+
 ```
 UGREEN is a PRIVATE API based Simple SDK being developed for NAS servers. NOT AN OFFICIAL DOCUMENT! 
 ```
